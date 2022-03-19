@@ -1,5 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import { Provider } from 'react-redux';
+import Users from './Components/Users/Users.jsx';
+import configureStore from './store/configureStore';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import './App.css';
+
+const store = configureStore();
+
+const App = () => {
+    return (
+        <Provider store={store}>
+            <div className={'App'}>
+                <h1>test</h1>
+                <Users />
+            </div>
+        </Provider>
+    );
+};
+
+export default App;

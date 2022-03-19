@@ -7,6 +7,20 @@ module.exports = {
         path: path.join(__dirname, "/docs"),
         filename: "bundle.js"
     },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, '/'),
+        },
+        compress: true,
+        open: ['/'],
+        hot: true,
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+        },
+    },
     module: {
         rules: [
             {
